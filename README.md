@@ -50,23 +50,28 @@ pip install fsinfo
 ### Working with Files
 
 ```
-from YourPackageName.fileinfo import FileInfo 
+from fsinfo import FileInfo
 
-file = FileInfo('/path/to/your/file.txt')
-print(file.creation_time)
-file.copy_to('/path/to/destination/file.txt', overwrite=True)
+file_path = '/Users/foo/bar/baz.log'
+file_info = FileInfo(file_path)
+
+print(file_info.full_name)
+print(file_info.extension)
+print(file_info.length)
+print(file_info.directory)
 ```
 
 ### Working with Directories
 
 ```
-from YourPackageName.directoryinfo import DirectoryInfo 
+from fsinfo import DirectoryInfo
 
-directory = DirectoryInfo('/path/to/your/directory')
-print(directory.length)  # Total size of files in the directory
+dir_path = '/Users/foo/bar'
+dir_info = DirectoryInfo(dir_path)
 
-for  file_info  in  directory.get_files():
-  print(file_info.name)
+print(dir_info.full_name)
+print(dir_info.length)
+print(dir_info.exists)
 ```
 
 ## Contributing
