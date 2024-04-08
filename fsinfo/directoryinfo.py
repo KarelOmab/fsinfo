@@ -1,5 +1,5 @@
-from filesysteminfo import FileSystemInfo
-from fileinfo import FileInfo
+from .filesysteminfo import FileSystemInfo
+from .fileinfo import FileInfo
 import os
 import shutil
 from pathlib import Path

@@ -1,4 +1,4 @@
-from filesysteminfo import FileSystemInfo
+from .filesysteminfo import FileSystemInfo
 from pathlib import Path
 import shutil
 
