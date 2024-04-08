@@ -4,10 +4,15 @@ from datetime import datetime, timezone
 class FileSystemInfo:
     def __init__(self, path):
         self._path = Path(path).resolve()
-
+    
     @property
     def creation_time(self):
-        return datetime.fromtimestamp(self._path.stat().st_ctime, tz=timezone.utc)
+        try:
+            # Try to use st_birthtime for creation time if available (Python 3.10+)
+            return datetime.fromtimestamp(self._path.stat().st_birthtime, tz=timezone.utc)
+        except AttributeError:
+            # Fall back to st_ctime for Unix-like systems or if st_birthtime is not available
+            return datetime.fromtimestamp(self._path.stat().st_ctime, tz=timezone.utc)
 
     @property
     def exists(self):
