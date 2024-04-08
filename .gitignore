@@ -3,3 +3,9 @@
 .DS_Store
 .coverage
 /test/__pycache__
+/build
+fsinfo.egg-info/SOURCES.txt
+fsinfo.egg-info/top_level.txt
+fsinfo.egg-info/PKG-INFO
+fsinfo.egg-info/dependency_links.txt
+/dist
