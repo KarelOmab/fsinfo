@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='fsinfo',
-    version='0.0.7',
+    version='0.0.8',
     author='Karel Tutsu',
     author_email='karel.tutsu@gmail.com',
     description='A Python library for cross-platform filesystem operations, providing classes for handling files and directories.',
